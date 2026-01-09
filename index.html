@@ -124,10 +124,32 @@
         .hero h1 {
             font-size: 4rem;
             margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, var(--accent) 0%, #a78bfa 100%);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 .name-part {
+            display: inline-block;
+            animation: colorShift 6s ease-in-out infinite;
+        }
+
+        .hero h1 .name-part:nth-child(1) {
+            background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        .hero h1 .name-part:nth-child(2) {
+            background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        @keyframes colorShift {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.3); }
         }
 
         .hero .subtitle {
@@ -373,6 +395,52 @@
             line-height: 1.8;
         }
 
+        /* Leadership DNA Section */
+        #leadership {
+            background: var(--bg-secondary);
+        }
+
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .leadership-item {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .leadership-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 40px rgba(96, 165, 250, 0.1);
+        }
+
+        .leadership-item .emoji {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .leadership-item h3 {
+            color: var(--accent);
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .leadership-item p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
         /* Education Section */
         .education-card {
             background: var(--bg-card);
@@ -496,6 +564,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .leadership-grid {
+                grid-template-columns: 1fr;
+            }
+
             .contact-links {
                 flex-direction: column;
                 align-items: center;
@@ -517,6 +589,7 @@
     <nav>
         <ul>
             <li><a href="#about">About</a></li>
+            <li><a href="#leadership">Leadership DNA</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#education">Education</a></li>
@@ -527,11 +600,12 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Sooyoung Hyeon</h1>
-            <p class="subtitle">HR Specialist</p>
+            <h1><span class="name-part">Sooyoung</span> <span class="name-part">Hyeon</span></h1>
+            <p class="subtitle">HR Specialist | Cross-Functional Collaboration | Global Operations</p>
             <div class="contact-info">
                 <a href="tel:+821025969264">📞 (+82) 10-2596-9264</a>
                 <a href="mailto:bungun6@naver.com">✉️ bungun6@naver.com</a>
+                <a href="https://www.linkedin.com/in/수용-현-b5311b308" target="_blank">💼 LinkedIn</a>
             </div>
             <a href="#contact" class="cta-button">Get In Touch</a>
         </div>
@@ -548,6 +622,45 @@
                     and visa-related support. Fluent in Korean and English, I collaborated with global counterparts
                     in the U.S., India, Japan, Australia, and Malaysia.
                 </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership DNA Section -->
+    <section id="leadership">
+        <div class="container">
+            <h2>Leadership DNA</h2>
+            <div class="leadership-grid">
+                <div class="leadership-item">
+                    <span class="emoji">🤝</span>
+                    <h3>Team First</h3>
+                    <p>I prioritize collective success over individual achievements. Building strong, cohesive teams is at the heart of everything I do.</p>
+                </div>
+                <div class="leadership-item">
+                    <span class="emoji">💡</span>
+                    <h3>Caring is Sharing</h3>
+                    <p>Knowledge grows when shared. I actively mentor colleagues and distribute insights to strengthen the entire organization.</p>
+                </div>
+                <div class="leadership-item">
+                    <span class="emoji">🔍</span>
+                    <h3>Transparency</h3>
+                    <p>Open communication builds trust. I believe in clear, honest dialogue and keeping all stakeholders informed throughout every process.</p>
+                </div>
+                <div class="leadership-item">
+                    <span class="emoji">🌏</span>
+                    <h3>Global Mindset</h3>
+                    <p>Having collaborated across U.S., India, Japan, Australia, and Malaysia, I bring cultural awareness and adaptability to diverse teams.</p>
+                </div>
+                <div class="leadership-item">
+                    <span class="emoji">🎯</span>
+                    <h3>Results-Driven</h3>
+                    <p>I focus on measurable outcomes and continuous improvement, delivering tangible impact like cost reduction and process optimization.</p>
+                </div>
+                <div class="leadership-item">
+                    <span class="emoji">🛠️</span>
+                    <h3>Hands-On Approach</h3>
+                    <p>From policy revision to event planning, I roll up my sleeves and get directly involved in execution to ensure quality results.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -649,6 +762,11 @@
                     <div class="icon">✉️</div>
                     <div class="label">Email</div>
                     <div class="value">bungun6@naver.com</div>
+                </a>
+                <a href="https://www.linkedin.com/in/수용-현-b5311b308" target="_blank" class="contact-card">
+                    <div class="icon">💼</div>
+                    <div class="label">LinkedIn</div>
+                    <div class="value">Connect with me</div>
                 </a>
             </div>
         </div>
