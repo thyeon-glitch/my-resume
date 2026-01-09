@@ -234,12 +234,58 @@
         }
 
         .about-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             text-align: center;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
+            position: relative;
+            padding: 2rem;
+        }
+
+        .about-content p {
+            font-size: 1.35rem;
+            line-height: 2;
+            color: var(--text-primary);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            background: linear-gradient(135deg, #e4e4e7 0%, #f4f4f5 50%, #e4e4e7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(96, 165, 250, 0.3);
+            animation: aboutGlow 4s ease-in-out infinite;
+        }
+
+        @keyframes aboutGlow {
+            0%, 100% {
+                filter: brightness(1);
+                opacity: 0.95;
+            }
+            50% {
+                filter: brightness(1.15);
+                opacity: 1;
+            }
+        }
+
+        .about-content::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 8rem;
+            font-family: Georgia, serif;
+            color: rgba(96, 165, 250, 0.15);
+            line-height: 1;
+        }
+
+        .about-content::after {
+            content: '"';
+            position: absolute;
+            bottom: -40px;
+            right: 20px;
+            font-size: 8rem;
+            font-family: Georgia, serif;
+            color: rgba(167, 139, 250, 0.15);
+            line-height: 1;
         }
 
         /* Experience Section */
@@ -538,6 +584,16 @@
 
             section h2 {
                 font-size: 2rem;
+            }
+
+            .about-content p {
+                font-size: 1.1rem;
+                line-height: 1.8;
+            }
+
+            .about-content::before,
+            .about-content::after {
+                font-size: 5rem;
             }
 
             .timeline::before {
